@@ -1,3 +1,6 @@
+@import "btnConfig";
+@import "utilities";
+@import "config";
 
 * {
   box-sizing: border-box;
@@ -28,6 +31,49 @@ a {
   // 1. $variables
   // 2. nesting (dont forget about the ampersand (&) parent selector!)
   // 3. At-Rules
+  @include set-bg($primary-color);
+  height: 600px;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul{
+      display: flex; 
+      list-style-type: none;
+    }
+
+    li{
+      padding: 10px;
+    }
+
+    a{
+      color: text-color-picker($primary-color);
+    }
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    img{
+      width: 50%;
+    }
+
+    h1{
+      font-size: 50px; 
+      line-height: 1.2;
+    }
+    
+  }
+  
 }
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
